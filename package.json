@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/marcosbergamo/nodejs-socket-tutorial/issues"
   },
-  "homepage": "https://github.com/marcosbergamo/nodejs-socket-tutorial"
+  "homepage": "https://github.com/marcosbergamo/nodejs-socket-tutorial",
+  "dependencies": {
+    "buffertools": "^2.1.2"
+  }
 }
