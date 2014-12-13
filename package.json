@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-socket-tutorial",
+  "version": "0.0.1",
+  "description": "Hello world",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcosbergamo/nodejs-socket-tutorial.git"
+  },
+  "author": "Marcos Bérgamo <marcos@thedon.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcosbergamo/nodejs-socket-tutorial/issues"
+  },
+  "homepage": "https://github.com/marcosbergamo/nodejs-socket-tutorial"
+}
