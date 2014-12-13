@@ -1,12 +1,24 @@
 var buffertools = require('buffertools').extend();
-var net = require('net');
-//Todas as conexões recebidas devem retornar um hello =D
+var net = require('tls');
+var fs = require('fs');
+
+var options = {
+  key: fs.readFileSync( __dirname + '/socket-key.pem'),
+  cert: fs.readFileSync( __dirname + '/socket-cert.pem'),
+  //requestCert: true,
+  //rejectUnauthorized: true
+};
 
 // mensagens tem que terminar com uma quebra de linha /n
 var nl = new Buffer('\r\n');
 var buffer = new Buffer(0);
-var server = net.createServer(function(socket) {
+var server = net.createServer(options);
 
+server.listen(8080, function() { //'listening' listener
+  console.log('server bound');
+});
+
+server.on('secureConnection', function(socket){
   console.log('server connected');
 
   socket.on('end', function() {
@@ -67,9 +79,6 @@ var server = net.createServer(function(socket) {
       msgParser(socket, json);
     });
   });
-});
-server.listen(8080, function() { //'listening' listener
-  console.log('server bound');
 });
 
 function msgParser(socket, json){
